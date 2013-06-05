@@ -3,11 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Practica MRD</title>
-<script src="lib/cordova-2.7.0.js"></script>
+<script type="text/javascript" src="lib/cordova-2.7.0.js"></script>
 <script>
-document.addEventListener("deviceready", function() {
+document.addEventListener("deviceready", onDeviceReady, false); 
 
-	document.getElementById("btnLeerContactos").addEventListener("click", function() {
+function onDeviceReady() {
+
 		navigator.contacts.find(["*"], function(contactos) {
 			for (var i=0; i<contactos.length; i++) {
 				var contacto = contactos[i];
@@ -15,17 +16,14 @@ document.addEventListener("deviceready", function() {
 			}
 		}, function() {
 			alert("No se han podido leer los contactos");
-		});
+		}, false);
 		
-	}, false);
-	
-	}, false);
-	
-</script>
+		}
+		</script>
 
 </head>
 
 <body>
-<input type="button" id="btnLeerContactos">
+
 </body>
 </html>
