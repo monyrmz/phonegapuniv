@@ -6,15 +6,7 @@
 <script src="lib/cordova-2.7.0.js"></script>
 <script>
 document.addEventListener("deviceready", function() {
-	localStorage.setItem("descripcion", "Leyendo los contactos");
-	
-	// Leer
-	alert(localStorage.getItem("descripcion"));
-	
-	// Eliminar
-	//localStorage.clear();
 
-	
 	document.getElementById("btnLeerContactos").addEventListener("click", function() {
 		navigator.contacts.find(["*"], function(contactos) {
 			for (var i=0; i<contactos.length; i++) {
