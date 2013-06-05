@@ -5,10 +5,8 @@
 <title>Practica MRD</title>
 <script type="text/javascript" src="phonegap.js"></script>
 <script>
-document.addEventListener("deviceready", onDeviceReady, false); 
-
-function onDeviceReady() {
-
+document.addEventListener("deviceready", function() {
+	document.getElementById("btnLeerContactos").addEventListener("click", function() {
 		navigator.contacts.find(["*"], function(contactos) {
 			for (var i=0; i<contactos.length; i++) {
 				var contacto = contactos[i];
@@ -16,14 +14,16 @@ function onDeviceReady() {
 			}
 		}, function() {
 			alert("No se han podido leer los contactos");
-		}, false);
+		});
 		
-		}
-		</script>
+	}, false);
+	
+	},false);		</script>
 
 </head>
 
 <body>
+<input type="button" value="leer contactos" id="btnLeerContactos">
 
 </body>
 </html>
