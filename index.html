@@ -13,11 +13,7 @@ document.addEventListener("deviceready", function() {
 	
 	// Eliminar
 	//localStorage.clear();
-	
-	document.addEventListener("backbutton", function() {
-		
-	}, false);	
-	
+
 	
 	document.getElementById("btnLeerContactos").addEventListener("click", function() {
 		navigator.contacts.find(["*"], function(contactos) {
